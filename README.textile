@@ -19,6 +19,14 @@ bundle exec rake db:migrate
 This extension comes with three sliders plugins: Nivo, SimpleCarousel and Anything slider
 Depending on which plugin you want to install, run the following command:
 
+h3. Cycle2 Slider
+
+<pre>
+rails generate spree_slider:install_cycle2
+</pre>
+This slider is updated and tested with spree 3-0-stable and has been modified to be responsive.
+
+
 h3. Anything slider
 
 <pre>

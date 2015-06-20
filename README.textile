@@ -10,19 +10,20 @@ To install, add spree_slider to your @Gemfile@ and run `bundle install`:
 gem 'spree_slider', github: 'mindvision/spree_slider', branch: '3-0-stable'
 </pre>
 
-Then install and run the migrations to add the tables:
+This extension comes with three sliders plugins: Nivo, SimpleCarousel and Anything slider
+Depending on which plugin you want to install, run the following command (*this will automatically generate the required files and install the migrations*):
+
+h3. Nivo slider
+
 <pre>
-bundle exec rake railties:install:migrations
-bundle exec rake db:migrate
+bin/rails g spree_slider:install_nivo
 </pre>
 
-This extension comes with three sliders plugins: Nivo, SimpleCarousel and Anything slider
-Depending on which plugin you want to install, run the following command:
 
 h3. Cycle2 Slider
 
 <pre>
-rails generate spree_slider:install_cycle2
+bin/rails g spree_slider:install_cycle2
 </pre>
 This slider is updated and tested with spree 3-0-stable and has been modified to be responsive.
 
@@ -30,20 +31,15 @@ This slider is updated and tested with spree 3-0-stable and has been modified to
 h3. Anything slider
 
 <pre>
-rails generate spree_slider:install_anything
+bin/rails g spree_slider:install_anything
 </pre>
 
 h3. SimpleCarousel slider
 
 <pre>
-rails generate spree_slider:install_simple_carousel
+bin/rails g spree_slider:install_simple_carousel
 </pre>
 
-h3. Nivo slider
-
-<pre>
-rails generate spree_slider:install_nivo
-</pre>
 
 The slider is almost unstyled. To customize you have to add your own css and
 eventually modify the partial copied into your app folder:

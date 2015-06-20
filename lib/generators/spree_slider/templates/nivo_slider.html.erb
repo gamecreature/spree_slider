@@ -2,11 +2,10 @@
   <style type="text/css">
   .theme-default #slider {
       margin:0 auto 0 auto;
-      width:618px; /* Make sure your images are the same size */
-      height:246px; /* Make sure your images are the same size */
+      height:250px; /* Make sure your images are the same size */
   }
   .slider-wrapper {
-      margin:0 auto 50px auto;
+      margin:0 auto 20px auto;
   }
   </style>
 
@@ -15,9 +14,9 @@
     <div id="slider" class="nivoSlider">
       <% Spree::Slide.published.order('position ASC').each do |s| %>
         <% if s.body != "" %>
-          <%= link_to image_tag(s.slide_image.url, :title => '#' + s.slide_name.to_url), url_for(s.slide_link) %>
+          <%= link_to image_tag(s.slide_image.url, :title => '#' + s.slide_name.to_url), url_for(s.slide_link), class: 'img-responsive' %>
         <% else %>
-          <%= link_to image_tag(s.slide_image.url), url_for(s.slide_link) %>
+          <%= link_to image_tag(s.slide_image.url), url_for(s.slide_link), class: 'img-responsive' %>
         <% end %>
       <% end %>
     </div>

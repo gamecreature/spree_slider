@@ -1,0 +1,27 @@
+ro:
+  actions: "Acțiuni"
+  next: "Următoarea"
+  previous: "Precedenta"
+  name: "Nume"
+  body: "Descriere"
+  link_url: "Referință URL"
+  image: "Imagine"
+  image_file_name: "Numele imaginii"
+  published: "Publicat"
+  position: "Poziție"
+  y: "Da"
+  n: "Nu"
+
+  activerecord:
+    models:
+      spree/slide: "Slide"
+
+  spree_slider:
+    config_name: "Slides"
+    config_description: "Gestionață conținutul Spree Slide"
+    title: "Slides"
+    new_slide: "Slide nou"
+    editing_slide: "Editează Slide"
+    placeholder_name: "Lăsați necompletat pentru a folosi numele produsului"
+    placeholder_link_url: "Lăsați necompletat pentru a folosi url aparținând produsului"
+    image_tip: "Default: prima imagine a produsului"

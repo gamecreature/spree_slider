@@ -1,5 +1,4 @@
 de:
-  actions: "Aktionen"
   next: "Nächste"
   previous: "Vorhergehend"
   name: "Name"
@@ -17,6 +16,7 @@ de:
       spree/slide: "Slide"
 
   spree_slider:
+    actions: "Aktionen"
     config_name: "Spree Slides"
     config_description: "Verwalten Spree Slider Inhalt"
     title: "Slides"

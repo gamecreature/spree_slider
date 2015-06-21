@@ -1,5 +1,4 @@
 es:
-  actions: "Acciones"
   next: "Siguiente"
   previous: "Anterior"
   name: "Nombre"
@@ -17,6 +16,7 @@ es:
       spree/slide: "Diapositiva"
 
   spree_slider:
+    actions: "Acciones"
     config_name: "Diapositivas Spree"
     config_description: "Configura las diapositivas de portada"
     title: "Diapositivas"

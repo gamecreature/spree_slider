@@ -1,5 +1,4 @@
 nl-NL:
-  actions: "Acties"
   next: "Volgende"
   previous: "Vorige"
   name: "Naam"
@@ -17,6 +16,7 @@ nl-NL:
       spree/slide: "Slide"
 
   spree_slider:
+    actions: "Acties"
     config_name: "Spree Slider"
     config_description: "Beheer Spree Slider inhoud"
     title: "Slides"

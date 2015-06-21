@@ -1,5 +1,4 @@
 ro:
-  actions: "Acțiuni"
   next: "Următoarea"
   previous: "Precedenta"
   name: "Nume"
@@ -17,6 +16,7 @@ ro:
       spree/slide: "Slide"
 
   spree_slider:
+    actions: "Acțiuni"
     config_name: "Slides"
     config_description: "Gestionață conținutul Spree Slide"
     title: "Slides"

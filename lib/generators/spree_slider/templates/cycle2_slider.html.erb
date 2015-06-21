@@ -5,7 +5,7 @@
     <div id="slider-wrapper">
       <div class="cycle-slideshow" data-cycle-slides="> a" data-cycle-speed="50">
         <% Spree::Slide.published.order('position ASC').each do |s| %>
-          <%= link_to "", url_for(s.slide_link) , style: "background-image: url('#{s.slide_image.url}')", :title => '#' + s.slide_name.to_url %>
+          <%= link_to "", url_for(s.slide_link) , style: "background-image: url('#{s.image_url('large')}')", :title => '#' + s.slide_name.to_url %>
         <% end %>
       </div>
     </div>

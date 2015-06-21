@@ -24,7 +24,7 @@
   <tbody>
   <% @slides.each do |slide|%>
     <tr id="<%= spree_dom_id slide %>" data-hook="admin_slides_index_rows">
-      <td><%= image_tag slide.image_url, class: 'img-responsive', style: 'height: 250px' %></td>
+      <td><%= image_tag slide.image_url('small'), class: 'img-responsive', style: 'height: 250px' %></td>
       <td><%= link_to slide.name, object_url(slide) %></td>
       <td><%= link_to slide.product.name, object_url(slide) unless slide.product_id.blank? %></td>
       <td><%= slide.published ? Spree.t(:say_yes) : Spree.t(:say_no) %></td>

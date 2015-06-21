@@ -4,7 +4,7 @@
       <% Spree::Slide.published.order('position ASC').each do |s| %>
         <li>
           <h1><%= s.slide_name %></h1>
-          <%= link_to image_tag(s.slide_image.url, :title => s.slide_name.to_url), url_for(s.slide_link) %>
+          <%= link_to image_tag(s.image_url('large'), title: s.slide_name.to_url), url_for(s.slide_link) %>
         </li>
       <% end %>
     </ul>

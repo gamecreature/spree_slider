@@ -20,7 +20,7 @@
   <%= f.text_field :link_url, placeholder: t('spree_slider.placeholder_link_url'), class: 'form-control' %>
 </div>
 
-<div class="form-control">
+<div class="form-group">
   <%= f.label :image, t(:image) %> <i>(<%= t('spree_slider.image_tip') %>)</i>
   <% if f.object.image? %>
     <p><%= image_tag f.object.image_url('small'), class: 'img-responsive' %></p>
@@ -30,7 +30,7 @@
 
 <div class="checkbox">
   <label>
-    <%= t(:published) %> <%= f.check_box :published %>
+    <%= f.check_box :published %> <%= t(:published) %>
   </label>
 </div>
 

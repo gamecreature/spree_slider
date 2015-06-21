@@ -19,6 +19,10 @@ h3. Nivo slider
 bin/rails g spree_slider:install_nivo
 </pre>
 
+The slider is almost unstyled. To customize you have to add your own css and
+eventually modify the partial copied into your app folder:
+app/views/spree/shared/_slider.html.erb
+
 
 h3. Cycle2 Slider
 
@@ -40,10 +44,6 @@ h3. SimpleCarousel slider
 bin/rails g spree_slider:install_simple_carousel
 </pre>
 
-
-The slider is almost unstyled. To customize you have to add your own css and
-eventually modify the partial copied into your app folder:
-app/views/spree/shared/_slider.html.erb
 
 h3. Or Roll your own!
 

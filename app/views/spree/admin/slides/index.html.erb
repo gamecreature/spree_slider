@@ -1,36 +1,37 @@
 <% content_for :page_actions do %>
   <h1 class="pull-left"><%= t("spree_slider.title") %></h1>
-  <div class='pull-right col-sm-2 add-slider' style="margin-top: 20px">
-    <%= button_link_to t('spree_slider.new_slide'), new_object_url, class: 'btn btn-success', :id => 'admin_new_slide_link' %>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class='pull-left add-slider'>
+        <%= button_link_to "+ #{t('spree_slider.new_slide')}", new_object_url, class: 'btn btn-success', id: 'admin_new_slide_link' %>
+      </div>
+    </div>
   </div>
   <div class="clearfix"></div>
 <% end %>
 
 
-<table class="index sortable" id="listing_slides" data-hook data-sortable-link="<%= update_positions_admin_slides_url %>" >
+<table class="table index sortable" id="listing_slides" data-hook data-sortable-link="<%= update_positions_admin_slides_url %>" >
   <thead>
   <tr data-hook="admin_slides_index_headers">
-    <th colspan="2"><%= Spree.t(:image) %></th>
+    <th><%= Spree.t(:image) %></th>
     <th><%= Spree.t(:name) %></th>
     <th><%= Spree.t(:product) %></th>
     <th><%= Spree.t(:published) %></th>
-    <th data-hook="admin_slides_index_header_actions" class="actions"></th>
+    <th data-hook="admin_slides_index_header_actions" class="actions"><%= Spree.t(:actions) %></th>
   </tr>
   </thead>
   <tbody>
   <% @slides.each do |slide|%>
     <tr id="<%= spree_dom_id slide %>" data-hook="admin_slides_index_rows">
-      <td class="no-border">
-        <span class="handle"></span>
-      </td>
-      <td class="align-center"><%= image_tag slide.slide_image, style: 'width: 120px; height: auto;' %></td>
+      <td><%= image_tag slide.image_url, class: 'img-responsive', style: 'height: 250px' %></td>
       <td><%= link_to slide.name, object_url(slide) %></td>
       <td><%= link_to slide.product.name, object_url(slide) unless slide.product_id.blank? %></td>
       <td><%= slide.published ? Spree.t(:say_yes) : Spree.t(:say_no) %></td>
       <td data-hook="admin_slides_index_row_actions" class="actions">
-        <%= link_to_edit slide, :no_text => true, :class => 'edit' %>
+        <%= link_to_edit slide, no_text: true, class: 'edit' %>
         &nbsp;
-        <%= link_to_delete slide, :no_text => true %>
+        <%= link_to_delete slide, no_text: true %>
       </td>
     </tr>
   <% end %>

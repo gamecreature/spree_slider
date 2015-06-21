@@ -12,14 +12,20 @@ class Spree::Slide < ActiveRecord::Base
   end
 
   def slide_name
-    name.blank? && product.present? ? product.name : name
+    self.name.blank? && product.present? ? product.name : self.name
   end
 
   def slide_link
     link_url.blank? && product.present? ? product : link_url
   end
 
-  def slide_image
-    !image.file? && product.present? && product.images.any? ? product.images.first.attachment : image
+  def image_url(size = 'medium')
+    if !image.file? && product.present? && product.images.any?
+      product.images.first.attachment.url
+    else
+      size = size.try(:downcase)
+      size = 'mobile_thumb' unless %w(web_thumb mobile_thumb default_thumb).include?(size)
+      self.image.url(size.to_sym)
+    end
   end
 end

@@ -1,7 +1,11 @@
 <h1><%= t('spree_slider.new_slide') %></h1>
-<%= render 'spree/shared/error_messages', :target => @slide %>
+<%= render 'spree/shared/error_messages', target: @slide %>
 
-<%= form_for [:admin, @slide] , :html => { :multipart => true } do |f| %>
-  <%= render :partial => 'form', :locals => { :f => f } %>
-  <p class="form-buttons" data-hook="buttons"><%= button t(:create) %></p>
+<%= form_for [:admin, @slide] , html: { multipart: true } do |f| %>
+
+  <%= render 'form', f: f %>
+
+  <div class="form-group">
+    <%= f.submit 'Create', class: 'btn btn-primary' %>
+  </div>
 <% end %>

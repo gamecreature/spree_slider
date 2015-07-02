@@ -1,2 +1,2 @@
 <!-- insert_before '[data-hook="homepage_products"]' -->
-<%= yield :spree_slider %>
+<%= render 'spree/shared/slider' %>

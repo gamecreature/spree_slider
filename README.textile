@@ -44,7 +44,6 @@ h3. SimpleCarousel slider
 bin/rails g spree_slider:install_simple_carousel
 </pre>
 
-
 h3. Or Roll your own!
 
 You may want to theme your site your own way.  If you want to include your own library such Bootstrap or Foundation.
@@ -67,9 +66,36 @@ Just add your own to your asset pipeline, and update your theme templates with a
 <% end %>
 </pre>
 
+h2. Multiple Sliders
+
+To use multiple sliders, you can define slider groups in a config/initializers/spree_slider.rb
+
+<pre>
+SpreeSlider.config do |c|
+ c.slide_groups = [ 
+   { id: 1, name: :home, text: "Homepage Left" },
+   { id: 2, name: :side, text: "Side slider" }
+ ]
+end 
+</pre>
+
+Next you can place a group-spefic slider like this: (where the parameter for_group is the name of the group).
+
+<pre>
+  <% Spree::Slide.published.for_group(:home).each do |s| %>
+    <li>
+      <%= link_to "", url_for(s.slide_link), class: 'slide', style: "background-image: url(#{s.image.url})" %>
+    </li>
+  <% end %>
+</pre>
+
+
 h2. Dynamic content management
 
 To add dynamic content, go to the spree admin section, under 'Configuration'
 and find the Spree Slider menu. 
 
 Copyright (c) 2012 "R.S.A.":http://www.rsaweb.com released under the New BSD License
+
+
+

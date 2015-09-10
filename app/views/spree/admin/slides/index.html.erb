@@ -11,7 +11,7 @@
 <% end %>
 
 
-<table class="table index sortable" id="listing_slides" data-hook data-sortable-link="<%= update_positions_admin_slides_url %>" >
+<table class="table table-condensed index sortable" id="listing_slides" data-hook data-sortable-link="<%= update_positions_admin_slides_url %>" >
   <thead>
   <tr data-hook="admin_slides_index_headers">
     <th><%= Spree.t(:image) %></th>
@@ -22,9 +22,19 @@
   </tr>
   </thead>
   <tbody>
+  <% last_slide_group_id = nil -%>
   <% @slides.each do |slide|%>
+    <% if last_slide_group_id != slide.slide_group_id 
+      last_slide_group_id = slide.slide_group_id 
+      %>
+      <tr>
+        <td class='info' colspan='6'><strong><%= slide.group_text||Spree.t(:no_group) %></strong></td>
+      </tr>
+    <% end %>
     <tr id="<%= spree_dom_id slide %>" data-hook="admin_slides_index_rows">
-      <td><%= image_tag slide.image_url('small'), class: 'img-responsive', style: 'height: 250px' %></td>
+      <td>  
+        <%= image_tag slide.image_url('small'), class: 'img-responsive', style: 'max-height: 150px' %>
+      </td>
       <td><%= link_to slide.name, object_url(slide) %></td>
       <td><%= link_to slide.product.name, object_url(slide) unless slide.product_id.blank? %></td>
       <td><%= slide.published ? Spree.t(:say_yes) : Spree.t(:say_no) %></td>

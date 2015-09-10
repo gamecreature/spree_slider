@@ -1,6 +1,12 @@
 <h1><%= t(:slide) %></h1>
 
 <table class="slider-edit">
+  <% if @slide.slide_group_id %>
+    <tr data-hook="slide_group_id">
+      <th><%= t(:slide_group_id) %></th>
+      <td><%= @slide.group_text  %></td>
+    </tr>
+  <% end %>
   <tr data-hook="product_id">
     <th><%= t(:product) %></th>
     <td>

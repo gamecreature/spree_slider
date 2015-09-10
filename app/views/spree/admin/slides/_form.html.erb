@@ -1,4 +1,11 @@
 <div class="form-group">
+  <%= f.field_container :slide_group_id do %>
+    <%= label_tag :slide_group_id, t(:slide_group_id) %><br />
+    <%= f.select :slide_group_id, options_for_select( SpreeSlider.slide_groups.map{|s| [s[:text],s[:id]] }), include_blank: true  %>
+  <% end %>
+</div>
+
+<div class="form-group">
   <%= f.field_container :product_id do %>
     <%= label_tag :product_id, t(:product) %><br />
     <%= hidden_field_tag 'slide[product_id]', f.object.product_id.to_s, class: 'product_picker fullwidth' %>

@@ -7,6 +7,8 @@ Author: Gilbert Pellegrom
 Author URI: http://dev7studios.com
 Supports Thumbs: false
 */
+$imgpath: "assets/themes/bar/";
+
 
 .theme-bar.slider-wrapper {
     position: relative;
@@ -15,7 +17,7 @@ Supports Thumbs: false
 }
 .theme-bar .nivoSlider {
 	position:relative;
-	background:#fff url(loading.gif) no-repeat 50% 50%;
+	background:#fff asset-url("#{$imgpath}loading.gif") no-repeat 50% 50%;
 }
 .theme-bar .nivoSlider img {
 	position:absolute;
@@ -60,7 +62,7 @@ Supports Thumbs: false
 	display:inline-block;
 	width:22px;
 	height:22px;
-	background:url(bullets.png) no-repeat;
+	background:asset-url("#{$imgpath}bullets.png") no-repeat;
 	text-indent:-9999px;
 	border:0;
 	margin: 5px 2px 0 2px;

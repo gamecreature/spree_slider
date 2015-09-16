@@ -1,3 +1,5 @@
 <!-- insert_before '[data-hook="homepage_products"]' -->
 <!-- original '461aae32b5912b8551fcf3a823427507f434a0cc' -->
+<% if SpreeSlider.auto_hook_frontpage -%>
 <%= render 'spree/shared/slider' %>
+<% end -%>

@@ -20,11 +20,13 @@ module SpreeSlider
   mattr_accessor :slide_groups
   @@slide_groups = []
 
+  mattr_accessor :auto_hook_frontpage
+  @@auto_hook_frontpage = true
+
   def self.group_id_for_name( name )
     group = slide_groups.find{|g|g[:name].to_s==name.to_s}
     group ? group[:id]  : nil
   end
-
 
   def self.config
     yield self

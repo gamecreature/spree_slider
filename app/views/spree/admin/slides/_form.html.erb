@@ -1,7 +1,7 @@
 <div class="form-group">
   <%= f.field_container :slide_group_id do %>
     <%= label_tag :slide_group_id, t(:slide_group_id) %><br />
-    <%= f.select :slide_group_id, options_for_select( SpreeSlider.slide_groups.map{|s| [s[:text],s[:id]] }), include_blank: true  %>
+    <%= f.select :slide_group_id, options_for_select( SpreeSlider.slide_groups.map{|s| [s[:text],s[:id].to_s] }, f.object.slide_group_id), include_blank: true  %>
   <% end %>
 </div>
 

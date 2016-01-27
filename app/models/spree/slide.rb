@@ -8,6 +8,7 @@ class Spree::Slide < ActiveRecord::Base
   scope :for_group_id, ->(id) { where(slide_group_id: id) }
   scope :for_group, ->(name) { where(slide_group_id: SpreeSlider.group_id_for_name(name) ) }
 
+  validates :slide_group_id, presence: true
 
 
   belongs_to :product, touch: true

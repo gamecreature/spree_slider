@@ -1,9 +1,9 @@
 source 'http://rubygems.org'
 
 group :test do
-  gem 'rspec-rails', '~> 2.11.0'
-  gem 'factory_girl', '~> 2.6.4'
-  gem 'factory_girl_rails', '~> 1.7'
+  gem 'rspec-rails'
+  gem 'factory_girl'
+  gem 'factory_girl_rails'
   gem 'faker'
   gem 'shoulda-matchers'
   gem 'guard-rspec'
@@ -15,6 +15,6 @@ group :test do
   end
 end
 
-gem 'spree', '~> 3.0'
+gem 'spree', '~> 3.1.0'
 
 gemspec

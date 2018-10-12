@@ -2,7 +2,7 @@ class Spree::Slide < ActiveRecord::Base
 
   has_attached_file :image, styles: { small: "250x250>", medium: "600x600>", large: "1000x1000>", original: "100%" }
   validates_attachment :image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
-  
+
   scope :published, -> { where(published: true).order('position ASC') }
 
   scope :for_group_id, ->(id) { where(slide_group_id: id) }
@@ -11,7 +11,7 @@ class Spree::Slide < ActiveRecord::Base
   validates :slide_group_id, presence: true
 
 
-  belongs_to :product, touch: true
+  belongs_to :product, touch: true, optional: true
 
   def initialize(attrs = nil)
     attrs ||= {:published => true}

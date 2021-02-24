@@ -28,8 +28,9 @@ class Spree::Slide < ActiveRecord::Base
 
   def image_url(size = 'medium')
     if !self.image.file? && product.present? && product.images.any?
-      product.images.first.attachment.try(:url) || product.images.first.attachment.try(:service_url)
+      # product.images.first.attachment.try(:url) || product.images.first.attachment.try(:service_url)
       # product.images.first&.url(size.to_sym)
+      ""
     else
       size = size.try(:downcase)
       size = 'medium' unless %w(small medium large original).include?(size)
